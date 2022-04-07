@@ -1,13 +1,6 @@
-//
-//  challengeUITestsLaunchTests.swift
-//  challengeUITests
-//
-//  Created by Safoine Moncef Amine on 7/4/2022.
-//
-
 import XCTest
 
-class challengeUITestsLaunchTests: XCTestCase {
+class ChallengeUITests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
