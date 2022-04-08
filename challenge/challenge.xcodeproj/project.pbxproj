@@ -16,6 +16,7 @@
 		9A1E9D3127FF9A6500830A14 /* RestaurantListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9D2F27FF9A6500830A14 /* RestaurantListViewController.swift */; };
 		9A1E9D3227FF9A6500830A14 /* RestaurantListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A1E9D3027FF9A6500830A14 /* RestaurantListViewController.xib */; };
 		9A1E9D3B27FFA66000830A14 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9D3A27FFA66000830A14 /* SceneDelegate.swift */; };
+		9A1E9D3E27FFAA7100830A14 /* RestaurantsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9D3D27FFAA7100830A14 /* RestaurantsService.swift */; };
 		9A1E9D4027FFAA9D00830A14 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 9A1E9D3F27FFAA9D00830A14 /* data.json */; };
 		9A1E9D4327FFABE600830A14 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9D4227FFABE600830A14 /* Restaurant.swift */; };
 		9A1E9D4527FFAFAD00830A14 /* RestaurantMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9D4427FFAFAD00830A14 /* RestaurantMapper.swift */; };
@@ -174,13 +175,22 @@
 				9A1E9CFE27FF916A00830A14 /* AppDelegate.swift */,
 				9A1E9D3A27FFA66000830A14 /* SceneDelegate.swift */,
 				9A1E9D4127FFAB6500830A14 /* models */,
+				9A1E9D3C27FFAA3F00830A14 /* services */,
 				9A1E9D3427FF9A7100830A14 /* UI */,
 			);
 			path = classes;
 			sourceTree = "<group>";
 		};
+		9A1E9D3C27FFAA3F00830A14 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				9A1E9D3D27FFAA7100830A14 /* RestaurantsService.swift */,
 				9A1E9D4427FFAFAD00830A14 /* RestaurantMapper.swift */,
 				9A1E9D4627FFC6F200830A14 /* DataLoader.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
 		9A1E9D4127FFAB6500830A14 /* models */ = {
 			isa = PBXGroup;
 			children = (
@@ -436,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A1E9D4327FFABE600830A14 /* Restaurant.swift in Sources */,
+				9A1E9D3E27FFAA7100830A14 /* RestaurantsService.swift in Sources */,
 				9A1E9D4727FFC6F200830A14 /* DataLoader.swift in Sources */,
 				9A1E9CFF27FF916A00830A14 /* AppDelegate.swift in Sources */,
 				9A1E9D3127FF9A6500830A14 /* RestaurantListViewController.swift in Sources */,
