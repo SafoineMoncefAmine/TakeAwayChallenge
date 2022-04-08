@@ -16,6 +16,7 @@
 		9A1E9D3127FF9A6500830A14 /* RestaurantListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9D2F27FF9A6500830A14 /* RestaurantListViewController.swift */; };
 		9A1E9D3227FF9A6500830A14 /* RestaurantListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A1E9D3027FF9A6500830A14 /* RestaurantListViewController.xib */; };
 		9A1E9D3B27FFA66000830A14 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9D3A27FFA66000830A14 /* SceneDelegate.swift */; };
+		9A1E9D4527FFAFAD00830A14 /* RestaurantMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9D4427FFAFAD00830A14 /* RestaurantMapper.swift */; };
 		B28C7456C9B17B6AF6DA20A6 /* Pods_challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9935AD9643C9FB715027B63 /* Pods_challenge.framework */; };
 		C709AD323DDD79D81649C5D2 /* Pods_challengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377FEC02E9E08A28D68FB498 /* Pods_challengeTests.framework */; };
 		CF6CD5940426AC309DF29748 /* Pods_challenge_challengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CCB0AEE2F1C62A3905974B /* Pods_challenge_challengeUITests.framework */; };
@@ -57,6 +58,7 @@
 		9A1E9D2F27FF9A6500830A14 /* RestaurantListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListViewController.swift; sourceTree = "<group>"; };
 		9A1E9D3027FF9A6500830A14 /* RestaurantListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantListViewController.xib; sourceTree = "<group>"; };
 		9A1E9D3A27FFA66000830A14 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9A1E9D4427FFAFAD00830A14 /* RestaurantMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMapper.swift; sourceTree = "<group>"; };
 		A37DCDC80F0DE24496FEA347 /* Pods-challengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeTests.release.xcconfig"; path = "Target Support Files/Pods-challengeTests/Pods-challengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		A6EC4F51C03D6AB319A26E59 /* Pods-challenge-challengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challenge-challengeUITests.release.xcconfig"; path = "Target Support Files/Pods-challenge-challengeUITests/Pods-challenge-challengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A9935AD9643C9FB715027B63 /* Pods_challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -416,6 +418,7 @@
 				9A1E9CFF27FF916A00830A14 /* AppDelegate.swift in Sources */,
 				9A1E9D3127FF9A6500830A14 /* RestaurantListViewController.swift in Sources */,
 				9A1E9D3B27FFA66000830A14 /* SceneDelegate.swift in Sources */,
+				9A1E9D4527FFAFAD00830A14 /* RestaurantMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
