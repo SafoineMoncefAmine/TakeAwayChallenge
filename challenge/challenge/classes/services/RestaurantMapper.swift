@@ -1,13 +1,19 @@
 import Foundation
 
 class RestaurantMapper {
-    struct Root: Codable {
+    private struct Root: Codable {
         let restaurants: [RemoteRestaurant]
         var mappedRestaurants: [Restaurant] {
             restaurants.map({
-                Restaurant(
+                let status: Status
+                switch $0.status {
+                case .statusOpen: status = .open
+                case .closed: status = .closed
+                case .orderAhead: status = .orderAhead
+                }
+                return Restaurant(
                     name: $0.name,
-                    status: Status(rawValue: $0.status.rawValue) ?? .closed,
+                    status: status,
                     sortingValues: SortingValues(
                         bestMatch: $0.sortingValues.bestMatch,
                         newest: $0.sortingValues.newest,
@@ -18,25 +24,24 @@ class RestaurantMapper {
                         deliveryCosts: $0.sortingValues.deliveryCosts,
                         minCost: $0.sortingValues.minCost)
                 )
-            }
-            )
+            })
         }
     }
 
-    struct RemoteRestaurant: Codable {
+    private struct RemoteRestaurant: Codable {
         let name: String
         let status: RemoteStatus
         let sortingValues: RemoteSortingValues
     }
 
-    struct RemoteSortingValues: Codable {
+    private struct RemoteSortingValues: Codable {
         let bestMatch, newest: Int
         let ratingAverage: Double
         let distance, popularity, averageProductPrice, deliveryCosts: Int
         let minCost: Int
     }
 
-    enum RemoteStatus: String, Codable {
+    private enum RemoteStatus: String, Codable {
         case closed = "closed"
         case orderAhead = "order ahead"
         case statusOpen = "open"
