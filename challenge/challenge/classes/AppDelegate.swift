@@ -10,7 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         RestaurantsService(loader: JSONDataLoader()).loadRestaurants { restaurants in
-            print(restaurants)
+            log.info(restaurants.description)
         }
         return true
     }
