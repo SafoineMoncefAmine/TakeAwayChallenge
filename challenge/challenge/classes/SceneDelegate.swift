@@ -10,7 +10,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.frame = UIScreen.main.bounds
-            window.rootViewController = RestaurantListViewController()
+            window.rootViewController = RestaurantListViewController(
+                viewModel: RestaurantListViewModel(service:
+                                                    RestaurantsService(loader: JSONDataLoader())
+                                                  )
+            )
             self.window = window
             window.makeKeyAndVisible()
         }

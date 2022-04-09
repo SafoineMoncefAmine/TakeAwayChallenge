@@ -10,7 +10,6 @@
 		9A1E9CFF27FF916A00830A14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9CFE27FF916A00830A14 /* AppDelegate.swift */; };
 		9A1E9D0827FF916C00830A14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A1E9D0727FF916C00830A14 /* Assets.xcassets */; };
 		9A1E9D0B27FF916C00830A14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A1E9D0927FF916C00830A14 /* LaunchScreen.storyboard */; };
-		9A1E9D1627FF916C00830A14 /* challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9D1527FF916C00830A14 /* challengeTests.swift */; };
 		9A1E9D2027FF916C00830A14 /* challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9D1F27FF916C00830A14 /* challengeUITests.swift */; };
 		9A1E9D2227FF916C00830A14 /* challengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9D2127FF916C00830A14 /* challengeUITestsLaunchTests.swift */; };
 		9A1E9D3127FF9A6500830A14 /* RestaurantListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9D2F27FF9A6500830A14 /* RestaurantListViewController.swift */; };
@@ -22,6 +21,10 @@
 		9A1E9D4527FFAFAD00830A14 /* RestaurantMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9D4427FFAFAD00830A14 /* RestaurantMapper.swift */; };
 		9A1E9D4727FFC6F200830A14 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9D4627FFC6F200830A14 /* DataLoader.swift */; };
 		9A1E9D4C2800D4D100830A14 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9D4B2800D4D100830A14 /* LogManager.swift */; };
+		9A1E9D4F2801254C00830A14 /* JSONDataLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9D4E2801254C00830A14 /* JSONDataLoaderTests.swift */; };
+		9A1E9D512801D65400830A14 /* RestaurantListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9D502801D65400830A14 /* RestaurantListViewModel.swift */; };
+		9A1E9D542801D7A000830A14 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9D522801D7A000830A14 /* RestaurantTableViewCell.swift */; };
+		9A1E9D552801D7A000830A14 /* RestaurantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A1E9D532801D7A000830A14 /* RestaurantTableViewCell.xib */; };
 		B28C7456C9B17B6AF6DA20A6 /* Pods_challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9935AD9643C9FB715027B63 /* Pods_challenge.framework */; };
 		C709AD323DDD79D81649C5D2 /* Pods_challengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377FEC02E9E08A28D68FB498 /* Pods_challengeTests.framework */; };
 		CF6CD5940426AC309DF29748 /* Pods_challenge_challengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CCB0AEE2F1C62A3905974B /* Pods_challenge_challengeUITests.framework */; };
@@ -56,7 +59,6 @@
 		9A1E9D0A27FF916C00830A14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A1E9D0C27FF916C00830A14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A1E9D1127FF916C00830A14 /* challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = challengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A1E9D1527FF916C00830A14 /* challengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = challengeTests.swift; sourceTree = "<group>"; };
 		9A1E9D1B27FF916C00830A14 /* challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = challengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A1E9D1F27FF916C00830A14 /* challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = challengeUITests.swift; sourceTree = "<group>"; };
 		9A1E9D2127FF916C00830A14 /* challengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = challengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -69,6 +71,10 @@
 		9A1E9D4427FFAFAD00830A14 /* RestaurantMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMapper.swift; sourceTree = "<group>"; };
 		9A1E9D4627FFC6F200830A14 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		9A1E9D4B2800D4D100830A14 /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
+		9A1E9D4E2801254C00830A14 /* JSONDataLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDataLoaderTests.swift; sourceTree = "<group>"; };
+		9A1E9D502801D65400830A14 /* RestaurantListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListViewModel.swift; sourceTree = "<group>"; };
+		9A1E9D522801D7A000830A14 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		9A1E9D532801D7A000830A14 /* RestaurantTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantTableViewCell.xib; sourceTree = "<group>"; };
 		A37DCDC80F0DE24496FEA347 /* Pods-challengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeTests.release.xcconfig"; path = "Target Support Files/Pods-challengeTests/Pods-challengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		A6EC4F51C03D6AB319A26E59 /* Pods-challenge-challengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challenge-challengeUITests.release.xcconfig"; path = "Target Support Files/Pods-challenge-challengeUITests/Pods-challenge-challengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A9935AD9643C9FB715027B63 /* Pods_challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,7 +143,7 @@
 		9A1E9D1427FF916C00830A14 /* challengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				9A1E9D1527FF916C00830A14 /* challengeTests.swift */,
+				9A1E9D4D280124CA00830A14 /* services */,
 			);
 			path = challengeTests;
 			sourceTree = "<group>";
@@ -167,6 +173,9 @@
 			children = (
 				9A1E9D2F27FF9A6500830A14 /* RestaurantListViewController.swift */,
 				9A1E9D3027FF9A6500830A14 /* RestaurantListViewController.xib */,
+				9A1E9D502801D65400830A14 /* RestaurantListViewModel.swift */,
+				9A1E9D522801D7A000830A14 /* RestaurantTableViewCell.swift */,
+				9A1E9D532801D7A000830A14 /* RestaurantTableViewCell.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -208,6 +217,14 @@
 				9A1E9D4B2800D4D100830A14 /* LogManager.swift */,
 			);
 			path = managers;
+			sourceTree = "<group>";
+		};
+		9A1E9D4D280124CA00830A14 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				9A1E9D4E2801254C00830A14 /* JSONDataLoaderTests.swift */,
+			);
+			path = services;
 			sourceTree = "<group>";
 		};
 		B02F28C88A0BD4D157621B03 /* Pods */ = {
@@ -308,6 +325,7 @@
 					};
 					9A1E9D1027FF916C00830A14 = {
 						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
 						TestTargetID = 9A1E9CFA27FF916A00830A14;
 					};
 					9A1E9D1A27FF916C00830A14 = {
@@ -343,6 +361,7 @@
 			files = (
 				9A1E9D4027FFAA9D00830A14 /* data.json in Resources */,
 				9A1E9D0B27FF916C00830A14 /* LaunchScreen.storyboard in Resources */,
+				9A1E9D552801D7A000830A14 /* RestaurantTableViewCell.xib in Resources */,
 				9A1E9D0827FF916C00830A14 /* Assets.xcassets in Resources */,
 				9A1E9D3227FF9A6500830A14 /* RestaurantListViewController.xib in Resources */,
 			);
@@ -456,10 +475,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A1E9D542801D7A000830A14 /* RestaurantTableViewCell.swift in Sources */,
 				9A1E9D4C2800D4D100830A14 /* LogManager.swift in Sources */,
 				9A1E9D4327FFABE600830A14 /* Restaurant.swift in Sources */,
 				9A1E9D3E27FFAA7100830A14 /* RestaurantsService.swift in Sources */,
 				9A1E9D4727FFC6F200830A14 /* DataLoader.swift in Sources */,
+				9A1E9D512801D65400830A14 /* RestaurantListViewModel.swift in Sources */,
 				9A1E9CFF27FF916A00830A14 /* AppDelegate.swift in Sources */,
 				9A1E9D3127FF9A6500830A14 /* RestaurantListViewController.swift in Sources */,
 				9A1E9D3B27FFA66000830A14 /* SceneDelegate.swift in Sources */,
@@ -471,7 +492,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A1E9D1627FF916C00830A14 /* challengeTests.swift in Sources */,
+				9A1E9D4F2801254C00830A14 /* JSONDataLoaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,14 +712,21 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.justeat.takeaway.challengeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/challenge.app/challenge";
@@ -711,10 +739,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.justeat.takeaway.challengeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

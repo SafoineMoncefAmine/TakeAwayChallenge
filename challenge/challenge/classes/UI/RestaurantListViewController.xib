@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RestaurantListViewController" customModule="challenge" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="JmB-FR-Cpp" id="MKy-xU-5dQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,18 +19,18 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyX-Em-bX3">
-                    <rect key="frame" x="166" y="437.5" width="82.5" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JmB-FR-Cpp">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="gyX-Em-bX3" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="P3E-ti-RxC"/>
-                <constraint firstItem="gyX-Em-bX3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="grt-iw-kKd"/>
+                <constraint firstItem="JmB-FR-Cpp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0Hq-cu-2f6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JmB-FR-Cpp" secondAttribute="bottom" id="X6I-oH-acJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JmB-FR-Cpp" secondAttribute="trailing" id="fOh-z8-BUb"/>
+                <constraint firstItem="JmB-FR-Cpp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="nbC-Ab-gYP"/>
             </constraints>
             <point key="canvasLocation" x="139" y="81"/>
         </view>
