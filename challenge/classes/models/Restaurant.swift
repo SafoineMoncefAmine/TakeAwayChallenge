@@ -14,7 +14,7 @@ struct SortingValues {
 }
 
 enum Status: String {
-    case closed
-    case orderAhead
-    case open
+    case closed = "closed"
+    case orderAhead = "order ahead"
+    case open = "open"
 }

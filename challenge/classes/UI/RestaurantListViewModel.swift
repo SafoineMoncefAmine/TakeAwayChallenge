@@ -33,17 +33,9 @@ class RestaurantListViewModel {
     private func generateCellsViewModels() {
         cellModels = restaurants.map({ RestaurantCellViewModel(
             name: $0.name,
-            status: statusTitle(status: $0.status),
+            status: $0.status.rawValue,
             sortingTitle: $0.sortingValues.minCost.description,
             sortingValue: $0.sortingValues.minCost.description)
         })
-    }
-
-    private func statusTitle(status: Status) -> String {
-        switch status {
-        case .closed: return "closed"
-        case .open: return "open"
-        case .orderAhead: return "order ahead"
-        }
     }
 }
