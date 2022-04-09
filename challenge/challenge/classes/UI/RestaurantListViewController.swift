@@ -37,13 +37,15 @@ class RestaurantListViewController: UIViewController {
 
 extension RestaurantListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.restaurants.count
+        return viewModel.cellModels.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantTableViewCell") else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantTableViewCell")
+                as?   RestaurantTableViewCell else {
             return UITableViewCell()
         }
+        cell.setViewModel(viewModel.cellModels[indexPath.row])
         return cell
     }
 }
