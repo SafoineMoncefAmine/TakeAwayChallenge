@@ -3,6 +3,8 @@ import UIKit
 class RestaurantListViewController: UIViewController {
 
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var sortPickerView: UIPickerView!
+    @IBOutlet private weak var sortTextField: UITextField!
 
     private var viewModel: RestaurantListViewModel
 
@@ -20,6 +22,9 @@ class RestaurantListViewController: UIViewController {
         setupTableView()
         setupHandlers()
         viewModel.loadRestaurants()
+        sortTextField.text = viewModel.selectedSortingType.rawValue
+        sortPickerView.dataSource = self
+        sortPickerView.delegate = self
     }
 
     private func setupTableView() {
@@ -47,5 +52,18 @@ extension RestaurantListViewController: UITableViewDataSource {
         }
         cell.setViewModel(viewModel.cellModels[indexPath.row])
         return cell
+    }
+}
+
+extension RestaurantListViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return viewModel.sortTypes.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return viewModel.sortTypes[row].rawValue
     }
 }
