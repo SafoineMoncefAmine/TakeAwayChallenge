@@ -7,6 +7,17 @@ class RestaurantListViewModel {
     private(set) var cellModels: [RestaurantCellViewModelProtocol] = []
     private let service: RestaurantsServiceProtocol
 
+    enum SortingType {
+        case bestMatch
+        case newest
+        case ratingAverage
+        case distance
+        case popularity
+        case averageProductPrice
+        case deliveryCosts
+        case minCost
+    }
+
     init(service: RestaurantsServiceProtocol) {
         self.service = service
     }
@@ -22,12 +33,13 @@ class RestaurantListViewModel {
     private func generateCellsViewModels() {
         cellModels = restaurants.map({ RestaurantCellViewModel(
             name: $0.name,
-            status: $0.status.rawValue,
+            status: statusTitle(status: $0.status),
             sortingTitle: $0.sortingValues.minCost.description,
             sortingValue: $0.sortingValues.minCost.description)
         })
     }
-    func statusTitle(status: Status) -> String {
+
+    private func statusTitle(status: Status) -> String {
         switch status {
         case .closed: return "closed"
         case .open: return "open"
