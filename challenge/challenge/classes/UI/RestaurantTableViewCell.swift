@@ -14,17 +14,3 @@ class RestaurantTableViewCell: UITableViewCell {
         sortingValueLabel.text = viewModel.sortingValue
     }
 }
-
-protocol RestaurantCellViewModelProtocol {
-    var name: String { get }
-    var status: String { get }
-    var sortingTitle: String { get }
-    var sortingValue: String { get }
-}
-
-struct RestaurantCellViewModel: RestaurantCellViewModelProtocol {
-    var name: String
-    var status: String
-    var sortingTitle: String
-    var sortingValue: String
-}
