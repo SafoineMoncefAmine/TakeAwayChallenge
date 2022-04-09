@@ -1,6 +1,11 @@
 import Foundation
 
 class RestaurantMapper {
+
+    enum Error: Swift.Error {
+        case invalidData
+    }
+
     private struct Root: Codable {
         let restaurants: [RemoteRestaurant]
         var mappedRestaurants: [Restaurant] {
@@ -49,7 +54,7 @@ class RestaurantMapper {
 
     static func map(_ data: Data) throws -> [Restaurant] {
         guard let root = try? JSONDecoder().decode(Root.self, from: data) else {
-            throw NSError()
+            throw Error.invalidData
         }
         return root.mappedRestaurants
     }
