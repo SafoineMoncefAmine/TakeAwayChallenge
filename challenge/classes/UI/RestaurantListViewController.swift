@@ -7,6 +7,7 @@ class RestaurantListViewController: UIViewController {
     @IBOutlet private weak var sortTextField: UITextField!
     @IBOutlet private weak var sortView: UIView!
     @IBOutlet private weak var sortingPickerContainerView: UIView!
+    @IBOutlet private weak var searchTextField: UITextField!
 
     private var viewModel: RestaurantListViewModel
 
@@ -27,11 +28,15 @@ class RestaurantListViewController: UIViewController {
         sortView.addGestureRecognizer(
             UITapGestureRecognizer(target: self, action: #selector(togglePickerViewVisibility))
         )
+        searchTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         viewModel.loadRestaurants()
     }
 
     @objc private func togglePickerViewVisibility() {
         sortingPickerContainerView.isHidden.toggle()
+    }
+    @objc private func textFieldDidChange() {
+        viewModel.search(name: searchTextField.text)
     }
     private func setupTableView() {
         tableView.dataSource = self
