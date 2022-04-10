@@ -34,6 +34,9 @@
 		9AA53C42280341D0006A6A7E /* RestaurantListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA53C41280341D0006A6A7E /* RestaurantListViewModelTests.swift */; };
 		9AA53C4428034446006A6A7E /* MockRestaurantsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA53C4328034446006A6A7E /* MockRestaurantsService.swift */; };
 		9AA53C4628035349006A6A7E /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA53C4528035349006A6A7E /* Status.swift */; };
+		9AA53C492803858F006A6A7E /* StatusExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA53C482803858F006A6A7E /* StatusExtensionTests.swift */; };
+		9AA53C4C280387DF006A6A7E /* SortingTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA53C4B280387DF006A6A7E /* SortingTypeTests.swift */; };
+		9AA53C4E28038948006A6A7E /* StatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA53C4D28038948006A6A7E /* StatusTests.swift */; };
 		B28C7456C9B17B6AF6DA20A6 /* Pods_challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9935AD9643C9FB715027B63 /* Pods_challenge.framework */; };
 		C709AD323DDD79D81649C5D2 /* Pods_challengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377FEC02E9E08A28D68FB498 /* Pods_challengeTests.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +87,9 @@
 		9AA53C41280341D0006A6A7E /* RestaurantListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListViewModelTests.swift; sourceTree = "<group>"; };
 		9AA53C4328034446006A6A7E /* MockRestaurantsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRestaurantsService.swift; sourceTree = "<group>"; };
 		9AA53C4528035349006A6A7E /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		9AA53C482803858F006A6A7E /* StatusExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusExtensionTests.swift; sourceTree = "<group>"; };
+		9AA53C4B280387DF006A6A7E /* SortingTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingTypeTests.swift; sourceTree = "<group>"; };
+		9AA53C4D28038948006A6A7E /* StatusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTests.swift; sourceTree = "<group>"; };
 		A37DCDC80F0DE24496FEA347 /* Pods-challengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challengeTests.release.xcconfig"; path = "Target Support Files/Pods-challengeTests/Pods-challengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		A6EC4F51C03D6AB319A26E59 /* Pods-challenge-challengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-challenge-challengeUITests.release.xcconfig"; path = "Target Support Files/Pods-challenge-challengeUITests/Pods-challenge-challengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A9935AD9643C9FB715027B63 /* Pods_challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +148,8 @@
 		9A1E9D1427FF916C00830A14 /* challengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				9AA53C4A280387D0006A6A7E /* models */,
+				9AA53C472803853C006A6A7E /* extensions */,
 				9AA53C40280341B8006A6A7E /* UI */,
 				9AA53C3328032721006A6A7E /* resources */,
 				9A1E9D5D28030B3B00830A14 /* helpers */,
@@ -250,6 +258,23 @@
 				9AA53C41280341D0006A6A7E /* RestaurantListViewModelTests.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		9AA53C472803853C006A6A7E /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9AA53C482803858F006A6A7E /* StatusExtensionTests.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		9AA53C4A280387D0006A6A7E /* models */ = {
+			isa = PBXGroup;
+			children = (
+				9AA53C4B280387DF006A6A7E /* SortingTypeTests.swift */,
+				9AA53C4D28038948006A6A7E /* StatusTests.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 		B02F28C88A0BD4D157621B03 /* Pods */ = {
@@ -469,9 +494,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AA53C4C280387DF006A6A7E /* SortingTypeTests.swift in Sources */,
 				9AA53C3D280333A3006A6A7E /* RestaurantsServiceTests.swift in Sources */,
 				9AA53C37280329FF006A6A7E /* MockJSONDataLoader.swift in Sources */,
 				9AA53C3F28033CE3006A6A7E /* SharedTestHelpers.swift in Sources */,
+				9AA53C492803858F006A6A7E /* StatusExtensionTests.swift in Sources */,
+				9AA53C4E28038948006A6A7E /* StatusTests.swift in Sources */,
 				9AA53C42280341D0006A6A7E /* RestaurantListViewModelTests.swift in Sources */,
 				9AA53C3928032B9C006A6A7E /* RestaurantMapperTests.swift in Sources */,
 				9A1E9D4F2801254C00830A14 /* JSONDataLoaderTests.swift in Sources */,

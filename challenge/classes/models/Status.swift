@@ -9,9 +9,7 @@ enum Status: String {
 extension Status {
     static func > (lhs: Status, rhs: Status) -> Bool {
         switch (lhs, rhs) {
-        case (.open, _): return true
         case (_, .open): return false
-        case (.orderAhead, .closed): return true
         case (.closed, .orderAhead): return false
         default: return true
         }
