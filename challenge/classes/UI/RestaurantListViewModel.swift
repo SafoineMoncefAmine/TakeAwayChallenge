@@ -37,7 +37,7 @@ class RestaurantListViewModel {
             refreshCells()
             return
         }
-        filtredRestaurants = restaurants.filter({ $0.name.contains(name)})
+        filtredRestaurants = restaurants.filter({ $0.name.lowercased().contains(name.lowercased())})
         refreshCells()
     }
 
