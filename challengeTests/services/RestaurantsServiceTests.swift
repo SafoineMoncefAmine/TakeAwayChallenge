@@ -10,40 +10,42 @@ class RestaurantsServiceTests: XCTestCase {
         let service = makeSUT(dataLoader: mockDataLoader)
         var expectedRestaurants: [Restaurant] = []
         var completionInvoked = false
-        service.loadRestaurants { restaurants in
-            expectedRestaurants = restaurants
-            completionInvoked = true
+        service.loadRestaurants { result in
+            if case .success(let restaurants) = result {
+                expectedRestaurants = restaurants
+                completionInvoked = true
+            }
         }
         mockDataLoader.loadInvocation.first?(.success(makeData()))
         XCTAssertFalse(expectedRestaurants.isEmpty)
         XCTAssertTrue(completionInvoked)
     }
 
-    func test_load_shouldCompletWithEmptyList_whenSucceesHasInvalidData() {
+    func test_load_shouldCompletError_whenHasInvalidData() {
         let mockDataLoader = MockJSONDataLoader()
         let service = makeSUT(dataLoader: mockDataLoader)
-        var expectedRestaurants: [Restaurant] = []
         var completionInvoked = false
-        service.loadRestaurants { restaurants in
-            expectedRestaurants = restaurants
+        service.loadRestaurants { result in
             completionInvoked = true
+            if case .success = result {
+                XCTFail("should complete with faillure")
+            }
         }
         mockDataLoader.loadInvocation.first?(.success(makeInvalidData()))
-        XCTAssertTrue(expectedRestaurants.isEmpty)
         XCTAssertTrue(completionInvoked)
     }
 
-    func test_load_shouldCompletEmptyListOfRestaurants_whenFinishWithError() {
+    func test_load_shouldCompleteWithError_whenSericeFails() {
         let mockDataLoader = MockJSONDataLoader()
         let service = makeSUT(dataLoader: mockDataLoader)
-        var expectedRestaurants: [Restaurant] = []
         var completionInvoked = false
-        service.loadRestaurants { restaurants in
-            expectedRestaurants = restaurants
+        service.loadRestaurants { result in
             completionInvoked = true
+            if case .success = result {
+                XCTFail("should complete with faillure")
+            }
         }
         mockDataLoader.loadInvocation.first?(.failure(anyNSError()))
-        XCTAssertTrue(expectedRestaurants.isEmpty)
         XCTAssertTrue(completionInvoked)
     }
 

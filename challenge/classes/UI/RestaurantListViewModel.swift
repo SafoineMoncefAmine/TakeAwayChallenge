@@ -19,10 +19,15 @@ class RestaurantListViewModel {
     }
 
     func loadRestaurants() {
-        service.loadRestaurants { [weak self] restaurants in
-            self?.restaurants = restaurants
-            self?.filtredRestaurants = restaurants
-            self?.refreshCells()
+        service.loadRestaurants { [weak self] result in
+            switch result {
+            case .success(let restaurants):
+                self?.restaurants = restaurants
+                self?.filtredRestaurants = restaurants
+                self?.refreshCells()
+            case .failure:
+                log.warning("Error case should be handlded")
+            }
         }
     }
 

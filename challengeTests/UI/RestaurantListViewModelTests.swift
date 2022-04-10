@@ -11,7 +11,7 @@ class RestaurantListViewModelTests: XCTestCase {
         viewModel.loadDataHandler = { loadHandlerInvoked = true }
         viewModel.loadRestaurants()
         XCTAssertTrue(mockService.loadInvocations.count == 1)
-        mockService.loadInvocations.first?(makeRestaurants())
+        mockService.loadInvocations.first?(.success(makeRestaurants()))
         XCTAssertTrue(loadHandlerInvoked)
     }
 
@@ -20,7 +20,7 @@ class RestaurantListViewModelTests: XCTestCase {
         let viewModel = makeSUT(service: mockService)
         viewModel.loadRestaurants()
         XCTAssertTrue(mockService.loadInvocations.count == 1)
-        mockService.loadInvocations.first?(makeRestaurants())
+        mockService.loadInvocations.first?(.success(makeRestaurants()))
         XCTAssertEqual(viewModel.cellModels.count, 6)
     }
 
@@ -28,7 +28,7 @@ class RestaurantListViewModelTests: XCTestCase {
         let mockService = MockRestaurantsService()
         let viewModel = makeSUT(service: mockService)
         viewModel.loadRestaurants()
-        mockService.loadInvocations.first?(makeRestaurants())
+        mockService.loadInvocations.first?(.success(makeRestaurants()))
         viewModel.selectSortAt(index: SortingType.allCases.firstIndex(of: .openingStatus)!)
         XCTAssertEqual(viewModel.cellModels[0].name, "res1 searched")
         XCTAssertEqual(viewModel.cellModels[1].name, "res5")
@@ -42,7 +42,7 @@ class RestaurantListViewModelTests: XCTestCase {
         let mockService = MockRestaurantsService()
         let viewModel = makeSUT(service: mockService)
         viewModel.loadRestaurants()
-        mockService.loadInvocations.first?(makeRestaurants())
+        mockService.loadInvocations.first?(.success(makeRestaurants()))
         viewModel.selectSortAt(index: SortingType.allCases.firstIndex(of: .distance)!)
         XCTAssertEqual(viewModel.cellModels[0].name, "res3 searched")
         XCTAssertEqual(viewModel.cellModels[1].name, "res4 searched")
@@ -56,7 +56,7 @@ class RestaurantListViewModelTests: XCTestCase {
         let mockService = MockRestaurantsService()
         let viewModel = makeSUT(service: mockService)
         viewModel.loadRestaurants()
-        mockService.loadInvocations.first?(makeRestaurants())
+        mockService.loadInvocations.first?(.success(makeRestaurants()))
         viewModel.search(name: "searched")
         XCTAssertEqual(viewModel.cellModels.count, 3)
     }
@@ -65,7 +65,7 @@ class RestaurantListViewModelTests: XCTestCase {
         let mockService = MockRestaurantsService()
         let viewModel = makeSUT(service: mockService)
         viewModel.loadRestaurants()
-        mockService.loadInvocations.first?(makeRestaurants())
+        mockService.loadInvocations.first?(.success(makeRestaurants()))
         viewModel.search(name: "")
         XCTAssertEqual(viewModel.cellModels.count, 6)
     }
@@ -74,7 +74,7 @@ class RestaurantListViewModelTests: XCTestCase {
         let mockService = MockRestaurantsService()
         let viewModel = makeSUT(service: mockService)
         viewModel.loadRestaurants()
-        mockService.loadInvocations.first?(makeRestaurants())
+        mockService.loadInvocations.first?(.success(makeRestaurants()))
         viewModel.search(name: nil)
         XCTAssertEqual(viewModel.cellModels.count, 6)
     }

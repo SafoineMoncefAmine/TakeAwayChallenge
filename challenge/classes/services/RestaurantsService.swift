@@ -1,7 +1,7 @@
 import Foundation
 
 protocol RestaurantsServiceProtocol {
-    func loadRestaurants(completion: @escaping ([Restaurant]) -> Void)
+    func loadRestaurants(completion: @escaping (Result<[Restaurant], Error>) -> Void)
 }
 
 class RestaurantsService: RestaurantsServiceProtocol {
@@ -10,15 +10,20 @@ class RestaurantsService: RestaurantsServiceProtocol {
         dataLoader = loader
     }
 
-    func loadRestaurants(completion: @escaping ([Restaurant]) -> Void) {
+    func loadRestaurants(completion: @escaping (Result<[Restaurant], Error>) -> Void) {
         dataLoader.load(fileName: "data", completion: { result in
             switch result {
             case .success(let data):
-                let restaurants = try? RestaurantMapper.map(data)
-                completion(restaurants ?? [])
+                do {
+                let restaurants = try RestaurantMapper.map(data)
+                    completion(.success(restaurants))
+                } catch {
+                    log.error("Error Can't load data \(error)")
+                    completion(.failure(error))
+                }
             case .failure(let error):
-                completion([])
                 log.error("Error Can't load data \(error)")
+                completion(.failure(error))
             }
         })
     }
