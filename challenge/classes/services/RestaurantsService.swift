@@ -17,6 +17,7 @@ class RestaurantsService: RestaurantsServiceProtocol {
                 let restaurants = try? RestaurantMapper.map(data)
                 completion(restaurants ?? [])
             case .failure(let error):
+                completion([])
                 log.error("Error Can't load data \(error)")
             }
         })
