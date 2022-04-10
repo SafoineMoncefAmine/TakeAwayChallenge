@@ -5,6 +5,8 @@ class RestaurantListViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var sortPickerView: UIPickerView!
     @IBOutlet private weak var sortTextField: UITextField!
+    @IBOutlet private weak var sortView: UIView!
+    @IBOutlet private weak var sortingPickerView: UIView!
 
     private var viewModel: RestaurantListViewModel
 
@@ -20,13 +22,17 @@ class RestaurantListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        setupPickerView()
         setupHandlers()
+        sortView.addGestureRecognizer(
+            UITapGestureRecognizer(target: self, action: #selector(togglePickerViewVisibility))
+        )
         viewModel.loadRestaurants()
-        sortTextField.text = viewModel.selectedSortingType.rawValue
-        sortPickerView.dataSource = self
-        sortPickerView.delegate = self
     }
 
+    @objc private func togglePickerViewVisibility() {
+        sortingPickerView.isHidden.toggle()
+    }
     private func setupTableView() {
         tableView.dataSource = self
         tableView.register(
@@ -34,11 +40,16 @@ class RestaurantListViewController: UIViewController {
             forCellReuseIdentifier: "RestaurantTableViewCell"
         )
     }
-
     private func setupHandlers() {
         self.viewModel.loadDataHandler = { [weak self] in
             self?.tableView.reloadData()
+            self?.sortTextField.text = self?.viewModel.selectedSortingTitle
+            self?.sortingPickerView.isHidden = true
         }
+    }
+    private func setupPickerView() {
+        sortPickerView.dataSource = self
+        sortPickerView.delegate = self
     }
 }
 
