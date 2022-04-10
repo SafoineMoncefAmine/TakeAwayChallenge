@@ -6,7 +6,7 @@ class RestaurantListViewController: UIViewController {
     @IBOutlet private weak var sortPickerView: UIPickerView!
     @IBOutlet private weak var sortTextField: UITextField!
     @IBOutlet private weak var sortView: UIView!
-    @IBOutlet private weak var sortingPickerView: UIView!
+    @IBOutlet private weak var sortingPickerContainerView: UIView!
 
     private var viewModel: RestaurantListViewModel
 
@@ -31,7 +31,7 @@ class RestaurantListViewController: UIViewController {
     }
 
     @objc private func togglePickerViewVisibility() {
-        sortingPickerView.isHidden.toggle()
+        sortingPickerContainerView.isHidden.toggle()
     }
     private func setupTableView() {
         tableView.dataSource = self
@@ -44,7 +44,7 @@ class RestaurantListViewController: UIViewController {
         self.viewModel.loadDataHandler = { [weak self] in
             self?.tableView.reloadData()
             self?.sortTextField.text = self?.viewModel.selectedSortingTitle
-            self?.sortingPickerView.isHidden = true
+            self?.sortingPickerContainerView.isHidden = true
         }
     }
     private func setupPickerView() {

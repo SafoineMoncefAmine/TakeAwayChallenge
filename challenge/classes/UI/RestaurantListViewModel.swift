@@ -5,7 +5,7 @@ class RestaurantListViewModel {
     var loadDataHandler: () -> Void = { }
     var sortTypes: [SortingType] = SortingType.allCases
     var selectedSortingTitle: String {
-        selectedSortingType.rawValue
+        "sorted by: " + selectedSortingType.rawValue
     }
 
     private(set) var cellModels: [RestaurantCellViewModelProtocol] = []
