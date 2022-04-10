@@ -19,15 +19,16 @@ class RestaurantMapper {
                 return Restaurant(
                     name: $0.name,
                     status: status,
-                    sortingValues: SortingValues(
-                        bestMatch: $0.sortingValues.bestMatch,
-                        newest: $0.sortingValues.newest,
-                        ratingAverage: $0.sortingValues.ratingAverage,
-                        distance: $0.sortingValues.distance,
-                        popularity: $0.sortingValues.popularity,
-                        averageProductPrice: $0.sortingValues.averageProductPrice,
-                        deliveryCosts: $0.sortingValues.deliveryCosts,
-                        minCost: $0.sortingValues.minCost)
+                    sortingValues: [
+                        .bestMatch: $0.sortingValues.bestMatch,
+                        .newest: $0.sortingValues.newest,
+                        .ratingAverage: $0.sortingValues.ratingAverage,
+                        .distance: $0.sortingValues.distance,
+                        .popularity: $0.sortingValues.popularity,
+                        .averageProductPrice: $0.sortingValues.averageProductPrice,
+                        .deliveryCosts: $0.sortingValues.deliveryCosts,
+                        .minCost: $0.sortingValues.minCost
+                    ]
                 )
             })
         }
@@ -40,10 +41,10 @@ class RestaurantMapper {
     }
 
     private struct RemoteSortingValues: Codable {
-        let bestMatch, newest: Int
+        let bestMatch, newest: Double
         let ratingAverage: Double
-        let distance, popularity, averageProductPrice, deliveryCosts: Int
-        let minCost: Int
+        let distance, popularity, averageProductPrice, deliveryCosts: Double
+        let minCost: Double
     }
 
     private enum RemoteStatus: String, Codable {

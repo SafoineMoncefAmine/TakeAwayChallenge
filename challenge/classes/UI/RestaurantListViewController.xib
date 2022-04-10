@@ -59,7 +59,7 @@
                         </tableView>
                     </subviews>
                 </stackView>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GgN-2Z-3Fc" userLabel="pickerView">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GgN-2Z-3Fc" userLabel="pickerView">
                     <rect key="frame" x="10" y="84" width="394" height="778"/>
                     <subviews>
                         <pickerView contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ce-OC-1mP">

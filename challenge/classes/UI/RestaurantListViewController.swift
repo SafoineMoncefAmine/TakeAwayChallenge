@@ -36,7 +36,9 @@ class RestaurantListViewController: UIViewController {
     }
 
     private func setupHandlers() {
-        self.tableView.reloadData()
+        self.viewModel.loadDataHandler = { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
 }
 
@@ -44,7 +46,6 @@ extension RestaurantListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.cellModels.count
     }
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantTableViewCell")
                 as?   RestaurantTableViewCell else {
@@ -59,11 +60,13 @@ extension RestaurantListViewController: UIPickerViewDataSource, UIPickerViewDele
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return viewModel.sortTypes.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return viewModel.sortTypes[row].rawValue
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        viewModel.selectSortAt(index: row)
     }
 }
