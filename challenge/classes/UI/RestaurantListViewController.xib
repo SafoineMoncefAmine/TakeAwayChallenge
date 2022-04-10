@@ -12,6 +12,8 @@
             <connections>
                 <outlet property="sortPickerView" destination="5ce-OC-1mP" id="K9k-ge-Gbr"/>
                 <outlet property="sortTextField" destination="2Yp-gf-mfH" id="lbz-86-gbJ"/>
+                <outlet property="sortView" destination="IAQ-yB-IA4" id="pMC-HT-3mU"/>
+                <outlet property="sortingPickerView" destination="GgN-2Z-3Fc" id="YyX-Sz-3U0"/>
                 <outlet property="tableView" destination="JmB-FR-Cpp" id="MKy-xU-5dQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -27,11 +29,6 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAQ-yB-IA4" userLabel="sortTextView">
                             <rect key="frame" x="0.0" y="0.0" width="394" height="40"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSr-e2-bBn">
-                                    <rect key="frame" x="0.0" y="0.0" width="394" height="40"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                </button>
                                 <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Yp-gf-mfH">
                                     <rect key="frame" x="0.0" y="0.0" width="394" height="40"/>
                                     <constraints>
@@ -45,12 +42,8 @@
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="2Yp-gf-mfH" secondAttribute="bottom" id="FIH-ZA-EYH"/>
                                 <constraint firstAttribute="trailing" secondItem="2Yp-gf-mfH" secondAttribute="trailing" id="X7W-kZ-s8N"/>
-                                <constraint firstAttribute="bottom" secondItem="tSr-e2-bBn" secondAttribute="bottom" id="YCV-W9-0iO"/>
-                                <constraint firstItem="tSr-e2-bBn" firstAttribute="leading" secondItem="IAQ-yB-IA4" secondAttribute="leading" id="qt4-BE-jFY"/>
                                 <constraint firstItem="2Yp-gf-mfH" firstAttribute="leading" secondItem="IAQ-yB-IA4" secondAttribute="leading" id="t3A-Kt-CZd"/>
-                                <constraint firstAttribute="trailing" secondItem="tSr-e2-bBn" secondAttribute="trailing" id="utd-0d-x1n"/>
                                 <constraint firstItem="2Yp-gf-mfH" firstAttribute="top" secondItem="IAQ-yB-IA4" secondAttribute="top" id="vXr-9I-iY8"/>
-                                <constraint firstItem="tSr-e2-bBn" firstAttribute="top" secondItem="IAQ-yB-IA4" secondAttribute="top" id="yi0-qd-xYx"/>
                             </constraints>
                         </view>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JmB-FR-Cpp">

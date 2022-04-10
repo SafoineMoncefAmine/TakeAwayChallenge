@@ -4,9 +4,12 @@ class RestaurantListViewModel {
 
     var loadDataHandler: () -> Void = { }
     var sortTypes: [SortingType] = SortingType.allCases
+    var selectedSortingTitle: String {
+        selectedSortingType.rawValue
+    }
 
     private(set) var cellModels: [RestaurantCellViewModelProtocol] = []
-    private(set) var selectedSortingType: SortingType = .openingStatus
+    private var selectedSortingType: SortingType = .openingStatus
     private var restaurants: [Restaurant] = []
     private let service: RestaurantsServiceProtocol
 
@@ -31,14 +34,15 @@ class RestaurantListViewModel {
             name: $0.name,
             status: $0.status.rawValue,
             sortingTitle: selectedSortingType.rawValue,
-            sortingValue: $0.sortingValues[selectedSortingType]?.description ?? "")
+            sortingValue: $0.sortingValues[selectedSortingType]?.description ?? "",
+            isSortingVisible: selectedSortingType != .openingStatus)
         })
     }
 
     private func sortCells() {
         if selectedSortingType == .openingStatus { sortByOpeningStatus(); return }
         restaurants.sort(by: {
-            $0.sortingValues[selectedSortingType] ?? .zero < $1.sortingValues[selectedSortingType] ?? .zero
+            $0.sortingValues[selectedSortingType] ?? .zero > $1.sortingValues[selectedSortingType] ?? .zero
         })
     }
 

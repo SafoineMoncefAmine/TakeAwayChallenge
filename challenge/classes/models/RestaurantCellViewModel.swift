@@ -5,6 +5,7 @@ protocol RestaurantCellViewModelProtocol {
     var status: String { get }
     var sortingTitle: String { get }
     var sortingValue: String { get }
+    var isSortingVisible: Bool { get }
 }
 
 struct RestaurantCellViewModel: RestaurantCellViewModelProtocol {
@@ -12,4 +13,5 @@ struct RestaurantCellViewModel: RestaurantCellViewModelProtocol {
     let status: String
     let sortingTitle: String
     let sortingValue: String
+    let isSortingVisible: Bool
 }
