@@ -52,20 +52,10 @@ class RestaurantListViewModel {
     }
 
     private func sortRestaurants() {
-        if selectedSortType == .openingStatus { sortByOpeningStatus(); return }
+        if selectedSortType == .openingStatus { filtredRestaurants.sort { $0.status > $1.status } }
         filtredRestaurants.sort(by: {
             $0.sortingValues[selectedSortType] ?? .zero > $1.sortingValues[selectedSortType] ?? .zero
         })
-    }
-
-    private func sortByOpeningStatus() {
-        filtredRestaurants.sort {
-            if $0.status == .open { return true }
-            if $1.status == .open { return false }
-            if $0.status == .orderAhead { return true }
-            if $1.status == .orderAhead { return false }
-            return true
-        }
     }
 
     private func refreshCells() {
