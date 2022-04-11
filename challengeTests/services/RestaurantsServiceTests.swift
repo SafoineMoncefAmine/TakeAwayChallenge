@@ -49,8 +49,12 @@ class RestaurantsServiceTests: XCTestCase {
         XCTAssertTrue(completionInvoked)
     }
 
-    func makeSUT(dataLoader: DataLoaderProtocol) -> RestaurantsService {
-        return RestaurantsService(loader: dataLoader)
+    func makeSUT(dataLoader: DataLoaderProtocol,
+                 file: StaticString = #filePath,
+                 line: UInt = #line) -> RestaurantsService {
+        let sut = RestaurantsService(loader: dataLoader)
+        trackForMemoryLeaks(sut, file: file, line: line)
+        return sut
     }
 
     private func makeData() -> Data {

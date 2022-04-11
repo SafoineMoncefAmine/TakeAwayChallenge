@@ -21,7 +21,9 @@ class JSONDataLoaderTests: XCTestCase {
         }
     }
 
-    private func makeSUT() -> JSONDataLoader {
-        return JSONDataLoader()
+    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> JSONDataLoader {
+        let sut = JSONDataLoader()
+        trackForMemoryLeaks(sut, file: file, line: line)
+        return sut
     }
 }

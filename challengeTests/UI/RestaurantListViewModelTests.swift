@@ -79,8 +79,14 @@ class RestaurantListViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.cellModels.count, 6)
     }
 
-    private func makeSUT(service: RestaurantsServiceProtocol) -> RestaurantListViewModel {
-        return RestaurantListViewModel(service: service)
+    private func makeSUT(
+        service: RestaurantsServiceProtocol,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) -> RestaurantListViewModel {
+        let sut = RestaurantListViewModel(service: service)
+        trackForMemoryLeaks(sut, file: file, line: line)
+        return sut
     }
     private func makeRestaurants() -> [Restaurant] {
         return [
